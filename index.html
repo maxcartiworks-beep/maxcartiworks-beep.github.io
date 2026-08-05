@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Максим — AI-решения для бизнеса</title>
+<meta name="description" content="Telegram-боты с ИИ, чат-ассистенты на сайт по базе знаний, боты записи клиентов с CRM. Живые демо, можно потыкать.">
+<style>
+  :root {
+    --bg: #0f1115;
+    --surface: #171a21;
+    --surface-2: #1e222b;
+    --line: #2a2f3a;
+    --text: #e8eaed;
+    --muted: #9aa3b2;
+    --accent: #7dd3a0;
+    --accent-dim: #4a8f68;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #fbfbfa;
+      --surface: #ffffff;
+      --surface-2: #f4f5f7;
+      --line: #e3e5e9;
+      --text: #16181d;
+      --muted: #626b7a;
+      --accent: #1f7a4d;
+      --accent-dim: #2f9c66;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 16px/1.6 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 24px; }
+
+  header { padding: 72px 0 40px; }
+  h1 {
+    margin: 0 0 16px;
+    font-size: clamp(30px, 6vw, 46px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+  }
+  .lede { margin: 0 0 28px; font-size: clamp(17px, 2.4vw, 20px); color: var(--muted); max-width: 62ch; }
+  .cta {
+    display: inline-block;
+    background: var(--accent);
+    color: #0b0d10;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 12px 22px;
+    border-radius: 8px;
+  }
+  .cta:hover { background: var(--accent-dim); color: #fff; }
+  .cta-note { margin-top: 12px; font-size: 14px; color: var(--muted); }
+
+  h2 {
+    margin: 56px 0 8px;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 600;
+  }
+
+  .cases { display: grid; gap: 18px; margin-top: 20px; }
+  .case {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 24px;
+  }
+  .case h3 { margin: 0 0 10px; font-size: 20px; letter-spacing: -0.01em; }
+  .case p { margin: 0 0 16px; color: var(--muted); }
+  .case a.demo {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+  }
+  .case a.demo:hover { text-decoration: underline; }
+  .case a.demo::after { content: "→"; }
+
+  .stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 1px solid var(--line);
+  }
+  .stack span {
+    font-size: 12.5px;
+    color: var(--muted);
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 4px 11px;
+  }
+
+  .how { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 24px; margin-top: 20px; }
+  .how ul { margin: 0; padding-left: 20px; }
+  .how li { margin-bottom: 10px; color: var(--muted); }
+  .how li:last-child { margin-bottom: 0; }
+  .how strong { color: var(--text); }
+
+  footer { margin: 64px 0 72px; padding-top: 28px; border-top: 1px solid var(--line); color: var(--muted); font-size: 15px; }
+  footer a { color: var(--accent); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+  .disclaimer { margin-top: 18px; font-size: 13.5px; color: var(--muted); opacity: 0.85; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Делаю AI-решения,<br>которые закрывают рутину бизнеса</h1>
+  <p class="lede">
+    Telegram-боты с искусственным интеллектом, чат-ассистенты на сайт по вашей базе знаний,
+    боты записи клиентов с панелью администратора. Всё ниже — работающие системы, можно открыть и потыкать прямо сейчас.
+  </p>
+  <a class="cta" href="https://t.me/maxautomates1">Написать в Telegram</a>
+  <div class="cta-note">Отвечаю в течение дня. Самозанятый — работаю по договору, с чеками.</div>
+</header>
+
+<h2>Работы</h2>
+<div class="cases">
+
+  <div class="case">
+    <h3>Запись клиентов в Telegram + CRM для администратора</h3>
+    <p>
+      Бот записывает клиентов круглосуточно, зная реальное расписание специалистов и свободные слоты —
+      поэтому никогда не предлагает время, которого нет. Администратор ведёт все записи и базу клиентов
+      в отдельной веб-панели. Двойная запись на один слот исключена на уровне базы данных, а не «мы стараемся проверять».
+    </p>
+    <a class="demo" href="https://clinic.maxcarter.ru">Открыть демо</a>
+    <div class="stack">
+      <span>Node.js</span><span>TypeScript</span><span>SQLite</span><span>Telegram Bot API</span><span>Claude tool-use</span><span>Docker</span>
+    </div>
+  </div>
+
+  <div class="case">
+    <h3>Чат-ассистент на сайт по вашим документам</h3>
+    <p>
+      Подключается одной строкой кода на любой сайт. Отвечает по вашим материалам через настоящий
+      смысловой поиск — посетитель спрашивает своими словами, ассистент понимает. Работает на русском.
+      Если ответа в базе нет, честно говорит «не знаю» и зовёт оператора, а не выдумывает условия доставки.
+    </p>
+    <a class="demo" href="https://widget.maxcarter.ru">Открыть демо</a>
+    <div class="stack">
+      <span>RAG на локальных эмбеддингах</span><span>multilingual-e5</span><span>Shadow DOM</span><span>NDJSON-стриминг</span><span>Docker</span>
+    </div>
+  </div>
+
+  <div class="case">
+    <h3>Агент поддержки с передачей оператору</h3>
+    <p>
+      Закрывает типовые обращения интернет-магазина в вебе и Telegram. Главное — умеет признавать,
+      когда не знает: просьба позвать человека, недовольство или вопрос вне базы знаний создают тикет
+      с полной историей переписки. Оператор получает не поток сообщений, а очередь задач.
+    </p>
+    <a class="demo" href="https://support.maxcarter.ru">Открыть демо</a>
+    <div class="stack">
+      <span>Node.js</span><span>TypeScript</span><span>Claude API</span><span>Telegram Bot API</span><span>Docker</span>
+    </div>
+  </div>
+
+</div>
+
+<h2>Как работаю</h2>
+<div class="how">
+  <ul>
+    <li><strong>Предоплата 50%</strong>, вторая половина после того, как примете результат.</li>
+    <li><strong>Сроки:</strong> простой бот — 3 дня, система с интеграциями — до двух недель.</li>
+    <li><strong>Месяц гарантии</strong> на исправление ошибок входит в стоимость.</li>
+    <li><strong>Обслуживание после сдачи</strong> — по желанию: хостинг, обновления, правки сценариев.</li>
+    <li><strong>Работаю с агентствами на субподряд</strong> — под вашим брендом, с вашим клиентом не контактирую.</li>
+  </ul>
+</div>
+
+<footer>
+  <div>
+    Telegram: <a href="https://t.me/maxautomates1">@maxautomates1</a> ·
+    GitHub: <a href="https://github.com/maxcartiworks-beep">maxcartiworks-beep</a>
+  </div>
+  <div class="disclaimer">
+    Проекты выше — собственные разработки, показанные на демонстрационных данных.
+    Готов обсудить, как это ложится на вашу задачу.
+  </div>
+</footer>
+
+</div>
+</body>
+</html>
