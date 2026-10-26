@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maxim — Telegram bots, scrapers and AI assistants</title>
+<meta name="description" content="Freelance developer: Telegram bots, web scrapers, spreadsheet automation, document parsing and AI assistants over your own data. Fixed price per milestone, you own the code.">
+<style>
+  :root {
+    --bg: #0f1115;
+    --surface: #171a21;
+    --surface-2: #1e222b;
+    --line: #2a2f3a;
+    --text: #e8eaed;
+    --muted: #9aa3b2;
+    --accent: #7dd3a0;
+    --accent-dim: #4a8f68;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #fbfbfa;
+      --surface: #ffffff;
+      --surface-2: #f4f5f7;
+      --line: #e3e5e9;
+      --text: #16181d;
+      --muted: #626b7a;
+      --accent: #1f7a4d;
+      --accent-dim: #2f9c66;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 16px/1.6 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 24px; }
+  .lang { padding-top: 20px; text-align: right; font-size: 14px; }
+  .lang a { color: var(--muted); text-decoration: none; }
+  .lang a:hover { color: var(--accent); }
+
+  header { padding: 48px 0 32px; }
+  h1 {
+    margin: 0 0 16px;
+    font-size: clamp(30px, 6vw, 46px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+  }
+  .lede { margin: 0 0 28px; font-size: clamp(17px, 2.4vw, 20px); color: var(--muted); max-width: 62ch; }
+  .cta {
+    display: inline-block;
+    background: var(--accent);
+    color: #0b0d10;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 12px 22px;
+    border-radius: 8px;
+  }
+  .cta:hover { background: var(--accent-dim); color: #fff; }
+  .cta-note { margin-top: 12px; font-size: 14px; color: var(--muted); }
+
+  h2 {
+    margin: 56px 0 8px;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 600;
+  }
+
+  .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-top: 20px; }
+  .service {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 20px;
+  }
+  .service h3 { margin: 0 0 6px; font-size: 17px; letter-spacing: -0.01em; }
+  .service p { margin: 0; color: var(--muted); font-size: 15px; }
+
+  .cases { display: grid; gap: 14px; margin-top: 20px; }
+  .case {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .case h3 { margin: 0 0 8px; font-size: 19px; letter-spacing: -0.01em; }
+  .case p { margin: 0; color: var(--muted); }
+  .case .proof { margin-top: 10px; font-size: 14.5px; color: var(--text); }
+  .case .proof::before { content: "Proof: "; color: var(--accent); font-weight: 600; }
+  .stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid var(--line);
+  }
+  .stack span {
+    font-size: 12.5px;
+    color: var(--muted);
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 4px 11px;
+  }
+
+  ol.steps { margin: 20px 0 0; padding: 0; list-style: none; counter-reset: s; display: grid; gap: 12px; }
+  ol.steps li {
+    counter-increment: s;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 16px 20px 16px 58px;
+    position: relative;
+    color: var(--muted);
+  }
+  ol.steps li strong { color: var(--text); }
+  ol.steps li::before {
+    content: counter(s);
+    position: absolute;
+    left: 20px;
+    top: 15px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 14px;
+    display: grid;
+    place-items: center;
+  }
+
+  .facts { margin-top: 20px; display: grid; gap: 10px; }
+  .facts div {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .facts dt, .facts .k { color: var(--muted); font-size: 14px; }
+  .facts .v { color: var(--text); }
+  @media (max-width: 560px) {
+    .facts div { grid-template-columns: 1fr; gap: 2px; }
+  }
+
+  a { color: var(--accent); }
+  footer { margin: 64px 0 48px; padding-top: 24px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="lang"><a href="../">Русская версия</a></div>
+
+  <header>
+    <h1>Telegram bots, scrapers and AI assistants that do one job well</h1>
+    <p class="lede">I am Maxim, a freelance developer. I automate the boring parts of a small business: taking orders in Telegram, collecting prices and data from websites, turning documents into spreadsheet rows, answering customers from your own price list and docs. Fixed price per milestone, and the source code is yours.</p>
+    <a class="cta" href="https://t.me/maxautomates1">Message me on Telegram</a>
+    <div class="cta-note">Describe the task and send an example file, link or screenshot. I reply with a plan, a price and a deadline before any work starts.</div>
+  </header>
+
+  <h2>What I build</h2>
+  <div class="services">
+    <div class="service">
+      <h3>Telegram and MAX bots</h3>
+      <p>Lead capture, booking, payments, reminders, admin commands. Webhooks, inline keyboards, databases behind them.</p>
+    </div>
+    <div class="service">
+      <h3>AI assistants over your data</h3>
+      <p>Answers from your documents and price list with a link to the source. When the answer is not in the data, it says so and hands over to a human.</p>
+    </div>
+    <div class="service">
+      <h3>Scrapers and data collection</h3>
+      <p>Websites, marketplaces and Telegram channels into Excel, Google Sheets or CSV, one-off or on a schedule.</p>
+    </div>
+    <div class="service">
+      <h3>Document parsing</h3>
+      <p>Scans and photos of invoices, receipts and waybills turned into structured rows, with totals checked by arithmetic.</p>
+    </div>
+    <div class="service">
+      <h3>Spreadsheet automation</h3>
+      <p>Excel and Google Sheets: formulas, lookups that survive messy data, macros, Apps Script, reports that recalculate themselves.</p>
+    </div>
+  </div>
+
+  <h2>Selected work</h2>
+  <div class="cases">
+    <div class="case">
+      <h3>OCR pipeline for supplier documents</h3>
+      <p>Scanned PDFs of waybills, invoices and receipts become JSON with fields and line items. Word coordinates from Tesseract, rotated pages straightened, rows and tables rebuilt from positions, every automatic fix written to a log.</p>
+      <div class="proof">delivered to a client through a freelance marketplace deal; totals are cross-checked by arithmetic instead of trusted.</div>
+      <div class="stack"><span>Python</span><span>Tesseract</span><span>PDF</span><span>JSON</span></div>
+    </div>
+    <div class="case">
+      <h3>Knowledge base assistant (RAG)</h3>
+      <p>Upload PDF, Markdown or text files and ask questions; every answer cites the document it came from. Local multilingual embeddings, no external search service.</p>
+      <div class="proof">27 automated tests. The first version used an English-only embedding model and ranked a junk question above relevant documents; a reference question set caught it, and a multilingual model fixed it.</div>
+      <div class="stack"><span>Node.js</span><span>embeddings</span><span>Docker</span></div>
+    </div>
+    <div class="case">
+      <h3>Bot for the MAX messenger</h3>
+      <p>Python bot for a client: welcome flow with buttons, per-user counters in SQLite that survive restarts, duplicate events filtered by message id.</p>
+      <div class="proof">paid first stage accepted by the client; 22 unit tests plus an end-to-end run against a fake MAX API.</div>
+      <div class="stack"><span>Python</span><span>httpx</span><span>SQLite</span></div>
+    </div>
+    <div class="case">
+      <h3>Customer support agent on four channels</h3>
+      <p>One agent for website chat, Telegram, WhatsApp and MAX: tickets, an operator panel for hand-over, LLM answers and speech recognition for voice messages.</p>
+      <div class="proof">website chat runs in the live demo; the Telegram, WhatsApp and MAX adapters are built and connect with the customer's own accounts.</div>
+      <div class="stack"><span>TypeScript</span><span>LLM API</span><span>Telegram Bot API</span></div>
+    </div>
+    <div class="case">
+      <h3>Receipt and invoice photo to spreadsheet</h3>
+      <p>A photo of a receipt or invoice goes to a vision model with a strict output schema and comes back as seller, date, total, tax and line items, exported to CSV.</p>
+      <div class="stack"><span>Vision LLM</span><span>structured output</span><span>CSV</span></div>
+    </div>
+    <div class="case">
+      <h3>Price comparison agent</h3>
+      <p>An agent opens online shops in a real browser, finds the product and collects prices into one table, so a buyer compares suppliers without opening twenty tabs.</p>
+      <div class="stack"><span>Playwright</span><span>LLM agent</span><span>Excel</span></div>
+    </div>
+    <div class="case">
+      <h3>Analytics dashboard with questions in plain language</h3>
+      <p>Ask a question about your data in plain words instead of writing SQL. The model writes the query, and a database authorizer blocks anything except reading, so a bad answer cannot change data.</p>
+      <div class="stack"><span>SQLite</span><span>LLM</span><span>NL to SQL</span></div>
+    </div>
+    <div class="case">
+      <h3>Docker control bot</h3>
+      <p>Manage server containers from Telegram: status, logs, resources. Access by an allow-list of user ids, and every action that changes something asks for confirmation.</p>
+      <div class="stack"><span>Node.js</span><span>Docker API</span><span>Telegram</span></div>
+    </div>
+  </div>
+
+  <h2>How we work</h2>
+  <ol class="steps">
+    <li><strong>You describe the task</strong> and send an example. The first review is free.</li>
+    <li><strong>I reply with a plan:</strong> what I will build, how we will check it, the price and the deadline. Larger jobs are split into milestones, each with its own price.</li>
+    <li><strong>Each milestone is paid before work on it starts.</strong> After that I deliver it with a setup guide, and you check it against what we agreed.</li>
+    <li><strong>You own everything:</strong> source code, accounts, data. Projects ship in Docker so they run on your server without me.</li>
+  </ol>
+
+  <h2>Practical details</h2>
+  <div class="facts">
+    <div><span class="k">Location</span><span class="v">Irkutsk, Russia, UTC+8. I work remotely and write in English.</span></div>
+    <div><span class="k">Payment</span><span class="v">USDT or a bank card transfer in rubles, agreed per milestone.</span></div>
+    <div><span class="k">Stack</span><span class="v">Node.js, TypeScript, Python, Docker, SQLite, Playwright, Telegram Bot API, LLM APIs</span></div>
+    <div><span class="k">I don't do</span><span class="v">spam mailings, fake engagement, work with other people's accounts or sessions, bypassing protections.</span></div>
+  </div>
+
+  <footer>
+    Telegram: <a href="https://t.me/maxautomates1">@maxautomates1</a> · Email: <a href="mailto:maxim@maxautomates.ru">maxim@maxautomates.ru</a> · Portfolio channel (in Russian): <a href="https://t.me/maxautomates13">t.me/maxautomates13</a>
+  </footer>
+</div>
+</body>
+</html>
